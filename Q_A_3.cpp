@@ -1,4 +1,4 @@
-Q: input value, find the smallest double base palindrome(2<=base<=10)
+Q: input value, find the smallest double base palindrome(2<=base<=10), the double-base palindrome should be large than the value
 
 
 A: C++ code
