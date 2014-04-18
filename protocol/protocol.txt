@@ -1,0 +1,45 @@
+Performance Report Protocol
+Version: 0.1  
+
+
+0. REPORT FORMAT(HTTP POST REQUEST BODY)
+SESSION:   SESSION_ID
+COMMMAND:  COMMAND_ID
+COMMAND_SPECIFIC_ITEMS:   
+
+1.  Performance Report  
+   SESSION:  PERFORMANCE
+
+(1) Start Session
+   COMMAND:  START-SESSION
+   TIME:     MM-DD-YYYY HH:MM
+   DEVICE:   XXXXXX
+   OS:       iOS/Android
+   CPU:      XXXXXX
+   MEMORY:   XXXXXX
+   
+ (2) Start Call
+   COMMAND:  START-CALL
+   TIME:     MM-DD-YYYY HH:MM
+   VIDEO:    ON/OFF
+   if( video == ON )
+     RESOLUTION:   WWW-HHH
+     FPS:          RRRR
+   AUDIO:    ON/OFF
+   
+  (3) INFO
+    COMMAND:   INFO
+    TIME:      MM-DD-YYYY HH:MM
+    BATTERY:   XX
+    CHARGING:  YES/NO
+    CPU:       XX
+    
+  (4) Stop Call
+    COMMAND:  STOP-CALL
+    TIME:     MM-DD-YYYY HH:MM
+    
+  (5) Stop Session
+    COMAND:   STOP-SESSION
+    TIME:     MM-DD-YYYY HH:MM
+    
+2.  Examples
