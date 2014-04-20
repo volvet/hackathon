@@ -12,7 +12,7 @@ COMMAND_SPECIFIC_ITEMS:
 
 (1) Start Session
    COMMAND:  START-SESSION
-   TIME:     MM-DD-YYYY HH:MM
+   TIME:     MM-DD-YYYY-HH-MM-SS
    DEVICE:   XXXXXX
    OS:       iOS/Android
    CPU:      XXXXXX
@@ -20,7 +20,7 @@ COMMAND_SPECIFIC_ITEMS:
    
  (2) Start Call
    COMMAND:  START-CALL
-   TIME:     MM-DD-YYYY HH:MM
+   TIME:     MM-DD-YYYY-HH-MM-SS
    VIDEO:    ON/OFF
    if( video == ON )
      RESOLUTION:   WWW-HHH
@@ -29,17 +29,43 @@ COMMAND_SPECIFIC_ITEMS:
    
   (3) INFO
     COMMAND:   INFO
-    TIME:      MM-DD-YYYY HH:MM
+    TIME:     MM-DD-YYYY-HH-MM-SS
     BATTERY:   XX
     CHARGING:  YES/NO
     CPU:       XX
     
   (4) Stop Call
     COMMAND:  STOP-CALL
-    TIME:     MM-DD-YYYY HH:MM
+    TIME:     MM-DD-YYYY-HH-MM-SS
     
   (5) Stop Session
     COMAND:   STOP-SESSION
-    TIME:     MM-DD-YYYY HH:MM
+    TIME:     MM-DD-YYYY-HH-MM-SS
     
 2.  Examples
+  (1) Performance: start session
+    (i) Request
+    POST / HTTP/1.1
+    Host: xxx.toright.com
+    User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-TW; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13 GTB7.1 ( .NET CLR 3.5.30729)
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    Accept-Language: zh-tw,en-us;q=0.7,en;q=0.3
+    Accept-Encoding: gzip,deflate
+    Accept-Charset: UTF-8,*
+    Keep-Alive: 115
+    Connection: keep-alive
+ 
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: XXXX
+    SESSION=PERFORMANCE&TIME=04-20-2014-14-48-40&DEVICE=ANDROID-PHONE&OS=ANDROID&CPU=QUALCOMM&MEMORY=632MB
+
+    (ii) Response:
+    HTTP/1.1 200 OK
+    Content-Type: text/xml; charset=utf-8
+    Content-Length: XXXX
+    Client: ('10.10.10.111', 47550)
+    Path: /
+    From data:
+
+3.  Reference
+    RFC 2626: Hypertext Transfer Protocol
