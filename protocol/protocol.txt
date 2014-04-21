@@ -22,23 +22,32 @@ COMMAND_SPECIFIC_ITEMS:
    COMMAND:  START-CALL
    TIME:     MM-DD-YYYY-HH-MM-SS
    VIDEO:    ON/OFF
-   if( video == ON )
+   if( VIDEO == ON )
      RESOLUTION:   WWW-HHH
      FPS:          RRRR
    AUDIO:    ON/OFF
+
+  (3) Stat Recv
+    COMMAND:  STAT-RECV
+    TIME:     MM-DD-YYYY-HH-MM-SS
+    VIDEO:    ON/OFF
+    if( VIDEO == ON )
+       RESOLUTION: WWW-HHH
+       FPS:        RRRR
+    AUDIO:    ON/OFF
    
-  (3) INFO
+  (4) INFO
     COMMAND:   INFO
     TIME:     MM-DD-YYYY-HH-MM-SS
     BATTERY:   XX
     CHARGING:  YES/NO
     CPU:       XX
     
-  (4) Stop Call
+  (5) Stop Call
     COMMAND:  STOP-CALL
     TIME:     MM-DD-YYYY-HH-MM-SS
     
-  (5) Stop Session
+  (6) Stop Session
     COMAND:   STOP-SESSION
     TIME:     MM-DD-YYYY-HH-MM-SS
     
