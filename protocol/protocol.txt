@@ -21,8 +21,8 @@ COMMAND_SPECIFIC_ITEMS:
  (2) Start Call
    COMMAND:  START-CALL
    TIME:     MM-DD-YYYY-HH-MM-SS
-   SEND_VIDEO:    ON/OFF
-   RECV_VIDEO:    ON/OFF
+   SEND-VIDEO:    ON/OFF
+   RECV-VIDEO:    ON/OFF
    AUDIO:    ON/OFF
 
   (3) INFO
@@ -31,10 +31,10 @@ COMMAND_SPECIFIC_ITEMS:
     BATTERY:   XX
     CHARGING:  YES/NO
     CPU:       XX	
-    if( SEND_VIDEO == ON )
+    if( SEND-VIDEO == ON )
       SEND_RES:  WWW*HHH
       SEND_FPS:  XXXX
-    if( RECV_VIDEO == ON )
+    if( RECV-VIDEO == ON )
       RECV_RES:  WWW*HHH
       RECV_FPS:  XXXX
 
