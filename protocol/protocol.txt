@@ -22,18 +22,13 @@ COMMAND_SPECIFIC_ITEMS:
    COMMAND:  START-CALL
    TIME:     MM-DD-YYYY-HH-MM-SS
    VIDEO:    ON/OFF
-   if( VIDEO == ON )
-     RESOLUTION:   WWW-HHH
-     FPS:          RRRR
    AUDIO:    ON/OFF
 
   (3) Stat Recv
     COMMAND:  STAT-RECV
     TIME:     MM-DD-YYYY-HH-MM-SS
-    VIDEO:    ON/OFF
-    if( VIDEO == ON )
-       RESOLUTION: WWW-HHH
-       FPS:        RRRR
+    SEND_VIDEO:    ON/OFF 
+    RECV_VIDEO:    ON/OFF
     AUDIO:    ON/OFF
    
   (4) INFO
@@ -41,7 +36,14 @@ COMMAND_SPECIFIC_ITEMS:
     TIME:     MM-DD-YYYY-HH-MM-SS
     BATTERY:   XX
     CHARGING:  YES/NO
-    CPU:       XX
+    CPU:       XX	
+	if( SEND_VIDEO == ON )
+	  SEND_RES:  WWW*HHH
+	  SEND_FPS:  XXXX
+	if( RECV_VIDEO == ON )
+	  RECV_RES:  WWW*HHH
+	  RECV_FPS:  XXXX
+
     
   (5) Stop Call
     COMMAND:  STOP-CALL
