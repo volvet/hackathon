@@ -25,7 +25,7 @@ COMMAND_SPECIFIC_ITEMS:
    RECV_VIDEO:    ON/OFF
    AUDIO:    ON/OFF
 
-  (4) INFO
+  (3) INFO
     COMMAND:   INFO
     TIME:     MM-DD-YYYY-HH-MM-SS
     BATTERY:   XX
@@ -39,11 +39,11 @@ COMMAND_SPECIFIC_ITEMS:
       RECV_FPS:  XXXX
 
     
-  (5) Stop Call
+  (4) Stop Call
     COMMAND:  STOP-CALL
     TIME:     MM-DD-YYYY-HH-MM-SS
     
-  (6) Stop Session
+  (5) Stop Session
     COMAND:   STOP-SESSION
     TIME:     MM-DD-YYYY-HH-MM-SS
     
