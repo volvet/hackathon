@@ -32,10 +32,10 @@ COMMAND_SPECIFIC_ITEMS:
     CHARGING:  YES/NO
     CPU:       XX	
     if( SEND-VIDEO == ON )
-      SEND-RES:  WWW*HHH
+      SEND-RES:  WWW-HHH
       SEND-FPS:  XXXX
     if( RECV-VIDEO == ON )
-      RECV-RES:  WWW*HHH
+      RECV-RES:  WWW-HHH
       RECV-FPS:  XXXX
 
     
