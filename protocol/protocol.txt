@@ -32,11 +32,11 @@ COMMAND_SPECIFIC_ITEMS:
     CHARGING:  YES/NO
     CPU:       XX	
     if( SEND-VIDEO == ON )
-      SEND_RES:  WWW*HHH
-      SEND_FPS:  XXXX
+      SEND-RES:  WWW*HHH
+      SEND-FPS:  XXXX
     if( RECV-VIDEO == ON )
-      RECV_RES:  WWW*HHH
-      RECV_FPS:  XXXX
+      RECV-RES:  WWW*HHH
+      RECV-FPS:  XXXX
 
     
   (4) Stop Call
