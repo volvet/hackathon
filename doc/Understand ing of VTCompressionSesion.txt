@@ -80,4 +80,11 @@
     这个函数也很简单,  得到Type ID而已.  
     
     
-                                                         
+10. VTCompressionSessionCompleteFrames
+    VT_EXPORT OSStatus  VTCompressionSessionCompleteFrames(
+                VTCompressionSessionRef session, 
+                CMTime  completeUntilPresentationTimeStamp) 
+    这个函数比较简单,  就是Flush操作.   因为编码工作在异步状态, 所以输入RAW data 之后, 只能等待CALLBACK得到压缩码流. 
+    这个函数就提供了一个强制Flush操作, 而且还可以输入TimeStamp来要求Flush 这个TimeStamp之前的Frame.  
+                                                      
+                                                      
