@@ -28,3 +28,34 @@
 
  
   
+4  PixelBufferPool
+   VT_EXPORT CVPixelBufferPoolRef  VTCompressionSessionGetPixelBufferPool(VTCompressionSessionRef session)
+   当VTCompressionSession被创建时候,  需要输入PIXEL FORMAT.   然后从VTCompressionSessionRef中取得的PixelBufferPool就是
+   基于输入的PIXEL FORMAT来创建的.  如果Source PIXEL format 和 Compress Pixel Format 不一致,  Video Toolbox 会自动进行
+   Color Space Convert(这个也许需要做实验验证下)
+
+
+5.  CompressionSessionPrepareToEncodeFrames
+    VT_EXPORT OSStatus  VTCompressionSessionPrepareToEncodeFrames(VTCompressionSessionRef session)
+   真正编码前的准备.   官方的注释上解释这个调用是为了让硬件编码器有机会申请其所需资源. 
+
+
+6.  EncodeFrame 
+    VT_EXPORT OSStatus  VTCompressionSesionEncodeFrame(
+            VTCompressionSessionRef session,
+            CVImageBufferRef    imageBuffer,
+            CMTime              presentationTimeStamp,
+            CMTime              duration, 
+            CFDirectionaryRef   frameProperties, 
+            void *              sourceFrameRefCon, 
+            VTEncodeInfoFlags   * infoFlagsOut)
+   终于看到真正的编码函数了, 激动ing.    前两个参数非常容易理解, 当然是session本身和需要编码的raw data. 第三个参数
+   应该是指Frame Time Stamp.   但是从CALLBACK中并没有看到presentationTimeStamp返回. 据此推测,  Frame Time Stamp斯需
+   要调用者想办法维护了.  如前所说, 使用sourceFrameRefCon也许是个办法.    第四个参数 duration, 对于RealTime 应用意义
+   不大.  本来Capture Frame Rate 就可能变化剧烈.    第五个参数 frameProperties也许是最有意思的参数了,  目前这个字典
+   可以支持什么样的参数输入, 还无法在官方文档和VTCompressionSession.h中找到.  我们需要搜索SDK中的其他头文件定义来探索
+   奥密.   容我卖个关子,  关于这个参数以后再说.  第六个参数是作为Out的变量,  这个定义已经在前文描述过了.  
+
+      
+         
+                                                         
