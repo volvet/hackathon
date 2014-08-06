@@ -1,6 +1,8 @@
-1.  ¶¨Òå
+1.  å®šä¹‰
    typedef struct OpaqueVTCompressionSession* VTCompressionSessionRef;
-   ´ËÎªVTCompressionSessionµÄ¶¨Òå, ´ÓAppleµÄ×¢ÊÍÀ´Àí½â, Õâ¸öÊÇÖ§³ÖÒýÓÃ¼ÆÊýµÄCF OBJECT.  ËùÎ½CF OBJECT, ¾ÍÊÇApple Core Foundation Object.  Core Foundation ÊÇapple µÄlow-level C application programming interface. Ò²¾ÍÊÇËµ,VTCompressionSessionÊÇCore Foundation ËùÌá¹©µÄ±à³Ì½Ó¿Ú£¬ ÆäÊµÏÖÊÇC Library, ²»ÊÇObject C Library. 
+   æ­¤ä¸ºVTCompressionSessionçš„å®šä¹‰, ä»ŽAppleçš„æ³¨é‡Šæ¥ç†è§£, è¿™ä¸ªæ˜¯æ”¯æŒå¼•ç”¨è®¡æ•°çš„CF OBJECT.  æ‰€è°“CF OBJECT, å°±æ˜¯Apple Core Foundation Object.
+   Core Foundation æ˜¯apple çš„low-level C application programming interface. ä¹Ÿå°±æ˜¯è¯´,VTCompressionSessionæ˜¯Core Foundation æ‰€æä¾›çš„ç¼–ç¨‹
+   æŽ¥å£ï¼Œ å…¶å®žçŽ°æ˜¯C Library, ä¸æ˜¯Object C Library. 
 
 2.  CALLBACK
    typedef void (*VTCompressionOutputCallback)(
@@ -9,17 +11,19 @@
                 OSStatus  status, 
                 VTEncodeInfoFlags   infoFlags, 
                 CMSampleBuffRef     sampleBuffer);
-  ´ËÎª±àÂëÍê³ÉÖ®ºóµÄ»Øµ÷º¯Êý¡£ ÐèÒª×¢ÒâµÄÊÇÕâ¸öº¯ÊýµÄµ÷ÓÃË³ÐòÊÇDECODE ORDER,  ²¢·ÇDISPLAY ORDER.  
-  outputCallbackRefCon£¬ Õâ¸ö²ÎÊýÊÇCallback reference value,  ÆäÊµÊÇ´´½¨VTCompressionSessionµÄÊ±ºòËù´«ÈëµÄÓÃ»§¶¨ÒåµÄ¶ÔÏó¡£ ÔÚÃ¿´ÎCallbackº¯Êý±»µ÷ÓÃµÄÊ±ºò»á×÷Îª²ÎÊý´«Èë¡£ 
-  sourceFrameRefCon,   Õâ¸ö²ÎÊýÊÇframe reference value,  ÆäÊµÊÇÔÚµ÷ÓÃÃ¿¸öFrame encode µÄÊ±ºòËù´«ÈëµÄÓÃ»§¶¨Òå¸úFrameÓÐ¹ØµÄ¶ÔÏó¡£  Õâ¸ö¶ÔÏó»áÔÚFrame encode Íê³ÉµÄÊ±ºò£¬  ´¥·¢»Øµ÷µÄÊ±ºò×÷Îª²ÎÊý´«Èë£¬  FrameµÄÊôÐÔ£¬ ±ÈÈçTime StampÖ®Àà¿ÉÒÔ¶¨ÒåÔÚÕâ¸ö¶ÔÏóÖÐ¡£  
-  status,  noErr ±íÊ¾±àÂëÃ»ÓÐ´íÎó,  ·ñÔò»áÓÐ´íÎóÂë·µ»Ø¡£  
-  infoFlags,   ÓÐÁ½ÖÖ¿ÉÄÜµÄÖµ£¬ Asynchronous ±íÊ¾±àÂëÊÇÒì²½µ÷ÓÃ£¬  FrameDropped, ±íÊ¾Õâ¸öFrame±»DropÁË¡£ 
-  CMSampleBuffRef  Õâ¸ö¾ÍÊÇ·µ»ØµÄÊÓÆµÂëÁ÷¡£  
+  æ­¤ä¸ºç¼–ç å®Œæˆä¹‹åŽçš„å›žè°ƒå‡½æ•°ã€‚ éœ€è¦æ³¨æ„çš„æ˜¯è¿™ä¸ªå‡½æ•°çš„è°ƒç”¨é¡ºåºæ˜¯DECODE ORDER,  å¹¶éžDISPLAY ORDER.  
+  outputCallbackRefConï¼Œ è¿™ä¸ªå‚æ•°æ˜¯Callback reference value,  å…¶å®žæ˜¯åˆ›å»ºVTCompressionSessionçš„æ—¶å€™æ‰€ä¼ å…¥çš„ç”¨æˆ·å®šä¹‰çš„å¯¹è±¡ã€‚ åœ¨æ¯æ¬¡
+  Callbackå‡½æ•°è¢«è°ƒç”¨çš„æ—¶å€™ä¼šä½œä¸ºå‚æ•°ä¼ å…¥ã€‚ 
+  sourceFrameRefCon,   è¿™ä¸ªå‚æ•°æ˜¯frame reference value,  å…¶å®žæ˜¯åœ¨è°ƒç”¨æ¯ä¸ªFrame encode çš„æ—¶å€™æ‰€ä¼ å…¥çš„ç”¨æˆ·å®šä¹‰è·ŸFrameæœ‰å…³çš„å¯¹è±¡ã€‚ 
+  è¿™ä¸ªå¯¹è±¡ä¼šåœ¨Frame encode å®Œæˆçš„æ—¶å€™ï¼Œ  è§¦å‘å›žè°ƒçš„æ—¶å€™ä½œä¸ºå‚æ•°ä¼ å…¥ï¼Œ  Frameçš„å±žæ€§ï¼Œ æ¯”å¦‚Time Stampä¹‹ç±»å¯ä»¥å®šä¹‰åœ¨è¿™ä¸ªå¯¹è±¡ä¸­ã€‚  
+  status,  noErr è¡¨ç¤ºç¼–ç æ²¡æœ‰é”™è¯¯,  å¦åˆ™ä¼šæœ‰é”™è¯¯ç è¿”å›žã€‚  
+  infoFlags,   æœ‰ä¸¤ç§å¯èƒ½çš„å€¼ï¼Œ Asynchronous è¡¨ç¤ºç¼–ç æ˜¯å¼‚æ­¥è°ƒç”¨ï¼Œ  FrameDropped, è¡¨ç¤ºè¿™ä¸ªFrameè¢«Dropäº†ã€‚ 
+  CMSampleBuffRef  è¿™ä¸ªå°±æ˜¯è¿”å›žçš„è§†é¢‘ç æµã€‚  
 
 
 3  EncoderID
    VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_EncoderID(_OSX_AVAILABLE_STARTING)(_MAC_10_0, IPHONE_8_0); 
-    Õâ¸öÊÇ¼òµ¥µÄEncodeID¶¨Òå£¬  ´ÓÕâÀï¿ÉÒÔ¿´³ö£¬ ÆäÊµAPPLEÔÚiOS8.0ºÍMAC 10.0 ÉÏ¶¼Ìá¹©ÁËÓ²¼þ±àÂëÖ§³Ö.  
+    è¿™ä¸ªæ˜¯ç®€å•çš„EncodeIDå®šä¹‰ï¼Œ  ä»Žè¿™é‡Œå¯ä»¥çœ‹å‡ºï¼Œ å…¶å®žAPPLEåœ¨iOS8.0å’ŒMAC 10.0 ä¸Šéƒ½æä¾›äº†ç¡¬ä»¶ç¼–ç æ”¯æŒ.  
 
  
   
