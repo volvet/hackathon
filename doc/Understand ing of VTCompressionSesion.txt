@@ -71,5 +71,13 @@
    奥密.   容我再卖个关子,  以后再说此参数.  第六个参数是作为Out的变量,  这个定义已经在前文描述过了.  
 
       
-         
+8.  VTCompressionSessionInvalidater
+    VT_EXPORT  OSStatus  VTCompressionSessionInvalidate(VTCompressionSesionRef session)
+    这个函数非常简单, 就相当于CompressionSession的TearDown,  把session设置invalidate之后, 可以用CFRelease来释放session. 
+    
+9.  GetTypeID
+    VT_EXPORT  CFTypeID   VTCompressionSessionGetTypeID(void)
+    这个函数也很简单,  得到Type ID而已.  
+    
+    
                                                          
