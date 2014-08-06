@@ -87,4 +87,6 @@
     这个函数比较简单,  就是Flush操作.   因为编码工作在异步状态, 所以输入RAW data 之后, 只能等待CALLBACK得到压缩码流. 
     这个函数就提供了一个强制Flush操作, 而且还可以输入TimeStamp来要求Flush 这个TimeStamp之前的Frame.  
                                                       
-                                                      
+11.  Multi-pass encoding.   
+    APPLE 的HW ENCODE 还支持Multi-pass,  大致浏览了Mulit-pass 相关的API之后, 感觉有些象X264所提供的Mulit-pass, 应该并
+    不适合RealTime应用, 在此略过不表.  有兴趣可以去了解X264的Multi-Pass相关模块.  
