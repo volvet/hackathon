@@ -26,21 +26,35 @@
    VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_EncoderID(_OSX_AVAILABLE_STARTING)(_MAC_10_0, IPHONE_8_0); 
     这个是简单的EncodeID定义，  从这里可以看出， 其实APPLE在iOS8.0和MAC 10.0 上都提供了硬件编码支持.  
 
- 
+4  VTCompressionSessionCreate
+   VT_EXPORT  OSStatus  VTCompressionSesionCreate(
+               CFAllocatorRef    allocator, 
+               int32_t           width, 
+               int32_t           height, 
+               CMVideoCodecType  codecType, 
+               CFDirectionRef    encodeSpecifacation, 
+               CFDirectionRef    sourceImageBufferAttribututes, 
+               CFAllocatorRef    compressedDataAllocator,  
+               VTCompressionOutputCallback    outputCallback,
+               void*             outputCallbackRefCon, 
+               VTCompressionSessionRef  *   compressionSessionOut)
+   这个是创建 VTCompressionSession的函数,  其输入参数大多简单,  需要提一下的是两个字典,  encodeSpecification 和 
+   sourceImageBufferAttributes,  这个没有官方文档说明,  需要进一步搜索SDK中的头文件定义.  容我卖个关子,  关于这
+   两个个参数以后再说. 
   
-4  PixelBufferPool
+5  PixelBufferPool
    VT_EXPORT CVPixelBufferPoolRef  VTCompressionSessionGetPixelBufferPool(VTCompressionSessionRef session)
    当VTCompressionSession被创建时候,  需要输入PIXEL FORMAT.   然后从VTCompressionSessionRef中取得的PixelBufferPool就是
    基于输入的PIXEL FORMAT来创建的.  如果Source PIXEL format 和 Compress Pixel Format 不一致,  Video Toolbox 会自动进行
    Color Space Convert(这个也许需要做实验验证下)
 
 
-5.  CompressionSessionPrepareToEncodeFrames
+6.  CompressionSessionPrepareToEncodeFrames
     VT_EXPORT OSStatus  VTCompressionSessionPrepareToEncodeFrames(VTCompressionSessionRef session)
    真正编码前的准备.   官方的注释上解释这个调用是为了让硬件编码器有机会申请其所需资源. 
 
 
-6.  EncodeFrame 
+7.  EncodeFrame 
     VT_EXPORT OSStatus  VTCompressionSesionEncodeFrame(
             VTCompressionSessionRef session,
             CVImageBufferRef    imageBuffer,
@@ -54,7 +68,7 @@
    要调用者想办法维护了.  如前所说, 使用sourceFrameRefCon也许是个办法.    第四个参数 duration, 对于RealTime 应用意义
    不大.  本来Capture Frame Rate 就可能变化剧烈.    第五个参数 frameProperties也许是最有意思的参数了,  目前这个字典
    可以支持什么样的参数输入, 还无法在官方文档和VTCompressionSession.h中找到.  我们需要搜索SDK中的其他头文件定义来探索
-   奥密.   容我卖个关子,  关于这个参数以后再说.  第六个参数是作为Out的变量,  这个定义已经在前文描述过了.  
+   奥密.   容我再卖个关子,  以后再说此参数.  第六个参数是作为Out的变量,  这个定义已经在前文描述过了.  
 
       
          
