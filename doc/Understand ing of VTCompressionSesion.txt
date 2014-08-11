@@ -110,6 +110,35 @@ Part 2:   VTCompressionProperties
 4.   kVTCompressionPropertyKey_MaxKeyFrameInterval
 5.   kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration
 6.   kVTCompressionPropertyKey_AllowTemporalCompression
+7.   kVTCompressionPropertyKey_AllowFrameReordering
+8.   kVTCompressionPropertyKey_AverageBitRate
+9.   kVTCompressionPropertyKey_DataRateLimits 
+10.  kVTCompressionPropertyKey_Quality
+11.  kVTCompressionPropertyKey_MoreFrameBeforeStart
+12.  kVTCompressionPropertyKey_MoreFrameAfterEnd
+13.  kVTCompressionPropertyKey_ProfileLevel
+14.  kVTCompressionPropertyKey_H264EntropyMode
+15.  kVTCompressionPropertyKey_Depth
+16.  kVTCompressionPropertyKey_MaxFrameDelayCount
+17.  kVTCompressionPropertyKey_MaxH264SliceBytes
+18.  kVTCompressionPropertyKey_RealTime
+19.  kVTCompressionPropertyKey_SourceFrameCount
+20.  kVTCompressionPropertyKey_ExpectedFrameRate
+21.  kVTCompressionPropertyKey_EceptionDuration
+22.  kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder
+23.  kVTVideoEncoderSpecification_RequreHardwareAcceleratedVideoEncoder
+24.  kVTCompressionPropertyKey_UsingHardwareAcceleratedVideoEncoder
+25.  kVTEncodeFrameOptionKey_ForceKeyFrame
+26.  kVTCompressionPropertyKey_CleanAperture
+27.  kVTCompressionPropertyKey_PixelAspectRatio
+28.  kVTCompressionPropertyKey_FieldDetail
+29.  kVTCompressionPropertyKey_AspectRatio16x9
+30.  kVTCompressionPropertyKey_ProgressionScan
+31.  kVTCompressionPropertyKey_ColorPrimries
+32.  kVTCompressionPropertyKey_TransferFunction
+33.  kVTCompressionPropertyKey_YCbCrMatrix
+34.  kVTCompressionPropertyKey_ICCProfile
+35.  kVTCompressionPropertyKey_MultiPassStorage
 
 未完待续. 
     
